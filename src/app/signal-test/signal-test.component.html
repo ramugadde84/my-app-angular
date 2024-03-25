@@ -1,0 +1,35 @@
+@for( user of fetchUserDataSign(); track user) {
+<li> {{user.username}} </li>
+}
+
+<div class="details">
+    <input type="text" (keyup)="search($event)" placeholder="Select any top user names"/>
+</div>
+<div class="details">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>ZipCode</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (data of fullDataSign(); track data) {
+            <tr>
+                <td>{{ data.email }}</td>
+                <td>{{ data.address.street }}</td>
+                <td>{{ data.address.city }}</td>
+                <td>{{ data.address.zipcode }}</td>
+                <td>{{ data.phone }}</td>
+            </tr>
+            }@empty {
+            <tr>
+                Data Empty
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

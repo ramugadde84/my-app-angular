@@ -1,0 +1,11 @@
+<!--  <li *ngFor="let user of users">
+      {{ user.name }}
+</li> -->
+<ul *ngIf="(users$ | async) as users">
+    @for (user of users; track user.id) {
+      <li> {{user.name}} </li>
+    } @empty {
+      <span> Empty list of users </span>
+    }
+</ul>
+  

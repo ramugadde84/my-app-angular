@@ -1,0 +1,64 @@
+.widget-container {
+    display: flex;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.branch-info {
+    margin: 10px 0;
+    /* Adjust top and bottom margin */
+    text-align: center;
+    /* Center the branch information */
+}
+
+.branch-info p {
+    margin: 0;
+    /* Reset paragraph margin */
+    display: inline-block;
+    /* Display paragraphs in a line */
+}
+
+.branch-id,
+.branch-name {
+    font-weight: bold;
+    /* Make branch ID and branch name text bold */
+    color: #333;
+    /* Change text color */
+}
+
+.branch-id::after {
+    content: "";
+    /* Add separator between Branch ID and Branch Name */
+}
+
+.branch-name {
+    color: green;
+    /* Change branch name text color */
+}
+
+.sticky-note {
+    position: relative;
+    padding: 10px;
+    background-color: #ffd700;
+    /* Yellow color */
+    border-radius: 5px;
+    margin: 10px;
+    /* Adjust margin between sticky notes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* Add a subtle shadow */
+    overflow: hidden;
+}
+
+.sticky-note::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    /* Adjust the distance of the bend from the left */
+    width: 20px;
+    /* Adjust the width of the bent portion */
+    height: 100%;
+    background-color: inherit;
+    transform: skewX(-20deg);
+    /* Adjust the skew angle */
+}

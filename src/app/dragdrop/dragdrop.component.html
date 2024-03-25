@@ -1,0 +1,13 @@
+<!-- app.component.html -->
+<div class="container">
+    <!-- Left side with draggable items -->
+    <div class="left" cdkDropList #leftList="cdkDropList" [cdkDropListData]="leftItems" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[rightList]">
+      <div *ngFor="let item of leftItems" class="item" cdkDrag>{{item}}</div>
+    </div>
+  
+    <!-- Right side as a droppable area -->
+    <div class="right" cdkDropList #rightList="cdkDropList" [cdkDropListData]="rightItems" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[leftList]">
+      <div *ngFor="let item of rightItems" class="item" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  

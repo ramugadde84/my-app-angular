@@ -1,0 +1,12 @@
+<button #loadingTriggerComponent>
+  Load Component
+</button>
+
+@defer (on interaction(loadingTriggerComponent)) {
+    <app-recommended-movies></app-recommended-movies>
+} @placeholder {
+    <p>Pokiri is recommended movie</p>
+} @loading {
+    <div>  Loading </div>
+}
+

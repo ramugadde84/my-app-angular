@@ -1,0 +1,36 @@
+/* app.component.css */
+.container {
+    display: flex;
+  }
+  
+  .left, .right {
+    min-height: 200px;
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .item {
+    cursor: grab;
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .right {
+    background-color: #d9edf7; /* Droppable area background color */
+  }
+  

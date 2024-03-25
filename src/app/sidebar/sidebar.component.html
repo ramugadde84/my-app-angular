@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"  fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/product">Products</a>
+      <a mat-list-item routerLink="/vendor">Vendors</a>
+      <a mat-list-item routerLink="/drag">Drag And Drop</a>
+      <a mat-list-item routerLink="/widget">Widgets</a>
+      <a mat-list-item routerLink="/defer">Defer</a>
+      <a mat-list-item routerLink="/signals">Signals</a>
+      <a mat-list-item routerLink="/table">Table Data</a>
+      <a mat-list-item  routerLink="/remotedata">Load Remote data</a>
+  </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content  class="content-container">
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <div class="toolbar-data-container">
+        <span>Test Application</span>
+        <app-login></app-login>
+       </div>
+    </mat-toolbar>
+    <div style="padding-left: 20px;padding-top: 20px"> <!-- Adjust the value according to your desired space -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 200px;
+  
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.content-container {
+  height: 100%;
+}
+
+.custom-color {
+  background-color: primary;
+}
+
+.toolbar-data-container {
+  display: flex;
+  align-items: center; /* Align items vertically if needed */
+}
+
+
+
+

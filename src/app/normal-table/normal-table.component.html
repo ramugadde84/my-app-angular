@@ -1,0 +1,14 @@
+<!-- table.component.html -->
+<table mat-table [dataSource]="data$ | async">
+    <!-- Define table columns dynamically using the mapping -->
+    <ng-container *ngFor="let header of headers" [matColumnDef]="header">
+      <th mat-header-cell *matHeaderCellDef>{{ header }}</th>
+      <td mat-cell *matCellDef="let element">{{ element[columnMapping[header]] }}</td>
+    </ng-container>
+  
+    <!-- Define table header row -->
+    <tr mat-header-row *matHeaderRowDef="headers"></tr>
+    <!-- Define table data rows -->
+    <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+  </table>
+  

@@ -1,0 +1,19 @@
+<div class="widget-container">
+    @for(card of configuration.cards; track card.id) {
+    @if(card.displayBox) {
+    <mat-card class="sticky-note" [style.width.px]="card.width" [style.height.px]="card.height"
+        [style.background-color]="card.backgroundColor">
+        @if(card.displayBranchId) {
+        <div class="branch-info">
+            <p class="branch-id">Branch ID: {{ card.branchId }}</p>
+        </div>
+        }
+        @if(card.displayBranchName) {
+        <div class="branch-info">
+            <p class="branch-name"> Branch Name: {{ card.branchName }}</p>
+        </div>
+        }
+    </mat-card>
+    }
+    }
+</div>
